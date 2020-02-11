@@ -4,7 +4,11 @@ CREATE OR REPLACE PACKAGE BODY PKG_UTIL IS
    FUNCTION normalize(str1 IN VARCHAR2) RETURN VARCHAR2 IS
     pos           INT;
     str           VARCHAR2(3000);
-    chars_special VARCHAR2(255) := 'ÆÆßÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝY';
+    chars_special VARCHAR2(255) := chr( 198 ) ||chr( 198 ) ||chr( 223 ) ||chr( 193 ) ||chr( 194 ) ||chr( 195 ) ||chr( 196 ) ||chr( 197 ) ||
+                                   chr( 199 ) ||chr( 200 ) ||chr( 201 ) ||chr( 202 ) ||chr( 203 ) ||chr( 204 ) ||chr( 205 ) ||chr( 206 ) ||
+				   chr( 207 ) ||chr( 208 ) ||chr( 209 ) ||chr( 210 ) ||chr( 211 ) ||chr( 212 ) ||chr( 213 ) ||chr( 214 ) ||
+				   chr( 216 ) ||chr( 217 ) ||chr( 218 ) ||chr( 219 ) ||chr( 220 ) ||chr( 221 ) ||chr( 89 ) ;
+    -- chars_special VARCHAR2(255) := 'ÆÆßÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝY';
     chars_normal  VARCHAR2(255) := 'AABAAAAACEEEEIIIIDNOOOOOOUUUUYY';
   
   BEGIN
