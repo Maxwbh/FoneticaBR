@@ -2,7 +2,6 @@
 
 **Data:** Fevereiro de 2026
 **Autor:** Maxwell Oliveira (maxwbh@gmail.com)
-**Branch:** claude/check-improvements-qiQ1u
 **Compatibilidade:** Oracle 9i · 10g · 11g · 12c · 18c · 19c · 21c · 23ai
 
 ---
