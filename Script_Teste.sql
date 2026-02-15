@@ -37,35 +37,35 @@ BEGIN
   DBMS_OUTPUT.put_line('');
   DBMS_OUTPUT.put_line('=== NOVAS REGRAS (fontes: BuscaBR / Metaphone-ptBR) ===');
 
-  -- QUE/QUI: U silencioso antes de E/I apos Q (dígrafo)
-  -- Fonte: ortografia portuguesa - QU antes de E/I o U nao e pronunciado
+  -- QUE/QUI: U silencioso antes de E/I após Q (dígrafo)
+  -- Fonte: ortografia portuguesa - QU antes de E/I o U não é pronunciado
   testar('QUE->KE',        'QUEIJO',                   'KEIO');
   testar('QUI->KI',        'QUILOMBO',                 'KIROMBO');
   testar('QUE->KE (meio)', 'ESQUEMA',                  'ESKEMA');
 
-  -- SCE/SCI: SC antes de E/I tem som de S simples (o C e silencioso)
+  -- SCE/SCI: SC antes de E/I tem som de S simples (o C é silencioso)
   -- Fonte: dígrafos do português - "nascer" soa como "naser"
   testar('SCE->SE',        'NASCER',                   'NASE');
   testar('SCI->SI',        'DESCIDA',                  'DESIDA');
   testar('SCE->SE (exc)',  'EXCEPCIONAL',              'ESEOSIONAR');
 
-  -- TH: regra para palavras historicas e estrangeiras
-  -- Fonte: BuscaBR / Metaphone-ptBR - TH tem som de T em portugues
+  -- TH: regra para palavras históricas e estrangeiras
+  -- Fonte: BuscaBR / Metaphone-ptBR - TH tem som de T em português
   testar('TH->T',          'THEATRO',                  'TEATRO');
   testar('TH->T (nome)',   'THOMAS',                   'TOMA');
 
-  -- RM: corrigido de RM->SM para RM->M (padrao BuscaBR)
-  -- Fonte: BuscaBR - RM tem som nasal M em portugues brasileiro
+  -- RM: corrigido de RM->SM para RM->M (padrão BuscaBR)
+  -- Fonte: BuscaBR - RM tem som nasal M em português brasileiro
   testar('RM->M (fix)',    'ARMANDO',                  'AMADO');
   testar('RM->M (nome)',   'HERMANO',                  'ERMANO');
 
-  -- SM: novo dígrafo SM->M (padrao BuscaBR)
+  -- SM: novo dígrafo SM->M (padrão BuscaBR)
   -- Fonte: BuscaBR - SM reduz ao som nasal M
   testar('SM->M',          'ESMERALDA',                'EMERARDA');
 
   DBMS_OUTPUT.put_line('');
   DBMS_OUTPUT.put_line('=== EQUIVALENCIAS FONETICAS (busca fuzzy) ===');
-  -- Nomes que devem produzir o mesmo codigo fonetico
+  -- Nomes que devem produzir o mesmo código fonético
   DECLARE
     v1 VARCHAR2(200);
     v2 VARCHAR2(200);

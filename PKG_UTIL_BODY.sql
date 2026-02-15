@@ -43,7 +43,7 @@ CREATE OR REPLACE PACKAGE BODY PKG_UTIL IS
       str     := REPLACE(str, strproc, strsub);
     END LOOP;
   
-    -- 18. Eliminamos as terminações S, Z, R, R, M, N, AO e L;
+    -- Eliminação das terminações S, Z, R, M, N, AO e L;
     str := str || ' ';
     str := REPLACE(str, 'S ', ' ');
     str := REPLACE(str, 'Z ', ' ');
